@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ChangeColor.dart';
+import 'change_color.dart';
 
 void main() {
   runApp(MainWidget());
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                 style: Theme.of(context).textTheme.headline2,
               ),
               SizedBox(
-                height: 36.0,
+                height: 32.0,
               ),
             ],
           ),
