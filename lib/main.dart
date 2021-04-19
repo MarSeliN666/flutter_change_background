@@ -12,6 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        accentColor: Colors.black,
+        fontFamily: 'VarelaRound',
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+        ),
+      ),
       home: MyHomePage(),
     );
   }
@@ -22,7 +31,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   Color _colorBackground = Colors.white;
 
   void _changeBackground() {
@@ -57,14 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "Hey\nthere",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 32.0,
-                          fontFamily: 'VarelaRound',
-                        ),
-                      ),
+                      child: Text("Hey\nthere",
+                          style: Theme.of(context).textTheme.headline1),
                     ),
                   ],
                 ),
@@ -72,20 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Spacer(
-                      flex: 8,
-                    ),
                     Text(
                       'Tap the screen\nto change background',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.black,
-                        fontFamily: 'VarelaRound',
-                      ),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
-                    Spacer(),
+                    SizedBox(
+                      height: 64.0,
+                    ),
                   ],
                 ),
               ),
