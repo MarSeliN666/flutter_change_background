@@ -2,13 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-// https://www.figma.com/file/dooyNpjr17FyhIjkdERmpb/Untitled?node-id=0%3A1
-
 void main() {
-  runApp(MyApp());
+  runApp(MainWidget());
 }
 
-class MyApp extends StatelessWidget {
+class MainWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,30 +19,23 @@ class MyApp extends StatelessWidget {
           headline2: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
         ),
       ),
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Color _colorBackground = Colors.white;
 
   void _changeBackground() {
     setState(() {
       _colorBackground = generateRandomColor();
     });
-  }
-
-  Color generateRandomColor() {
-    Random random = Random();
-    double randomDouble = random.nextDouble();
-
-    return Color((randomDouble * 0xFFFFFF).toInt()).withOpacity(1.0);
   }
 
   @override
@@ -66,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Hey\nthere",
+                      child: Text('Hey\nthere',
                           style: Theme.of(context).textTheme.headline1),
                     ),
                   ],
@@ -97,4 +88,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       ),
     );
   }
+}
+
+//Generate random color
+Color generateRandomColor() {
+  Random random = Random();
+  double randomDouble = random.nextDouble();
+
+  return Color((randomDouble * 0xFFFFFF).toInt()).withOpacity(1.0);
 }
