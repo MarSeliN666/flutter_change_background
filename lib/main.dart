@@ -1,6 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+
+import 'ChangeColor.dart';
 
 void main() {
   runApp(MainWidget());
@@ -29,12 +29,12 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
   Color _colorBackground = Colors.white;
 
   void _changeBackground() {
     setState(() {
-      _colorBackground = generateRandomColor();
+      _colorBackground = ChangeColor().generateRandomColor();
     });
   }
 
@@ -47,40 +47,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       child: Scaffold(
         backgroundColor: _colorBackground,
         body: SafeArea(
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 64.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Hey\nthere',
-                          style: Theme.of(context).textTheme.headline1),
-                    ),
-                  ],
+              SizedBox(
+                height: 64.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Hey\nthere',
+                  style: Theme.of(context).textTheme.headline1,
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Tap the screen\nto change background',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    SizedBox(
-                      height: 64.0,
-                    ),
-                  ],
-                ),
+              Spacer(),
+              Text(
+                'Tap the screen\nto change background',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline2,
               ),
-              Expanded(
-                child: Column(),
+              SizedBox(
+                height: 36.0,
               ),
             ],
           ),
@@ -88,12 +76,4 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
     );
   }
-}
-
-//Generate random color
-Color generateRandomColor() {
-  Random random = Random();
-  double randomDouble = random.nextDouble();
-
-  return Color((randomDouble * 0xFFFFFF).toInt()).withOpacity(1.0);
 }
