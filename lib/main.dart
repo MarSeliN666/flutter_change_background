@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Color generateRandomColor() {
     Random random = Random();
-    // Pick a random number in the range [0.0, 1.0)
     double randomDouble = random.nextDouble();
 
     return Color((randomDouble * 0xFFFFFF).toInt()).withOpacity(1.0);
@@ -41,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         _changeBackground();
       },
       child: Scaffold(
@@ -56,12 +55,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 64.0,
                     ),
-                    Text(
-                      "Hey\nthere",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 36.0,
-                        fontFamily: 'VarelaRound',
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Hey\nthere",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 32.0,
+                          fontFamily: 'VarelaRound',
+                        ),
                       ),
                     ),
                   ],
