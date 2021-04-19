@@ -2,15 +2,12 @@
 
 A change background Flutter application.
 
-## Getting Started
+## Figma mockup
+https://www.figma.com/file/dooyNpjr17FyhIjkdERmpb/Untitled?node-id=0%3A1
+## About "Flutter Change Background Color" App
+- Made Flutter SplashScreen
+![Screenshot_20210419-121853](https://user-images.githubusercontent.com/44782699/115213436-2c4e3580-a10a-11eb-83a0-e65e866a4c9a.jpg)
+- Layout created from Figma mockup
+![Screenshot_20210419-121822](https://user-images.githubusercontent.com/44782699/115214153-e645a180-a10a-11eb-8ce9-6420afb07d6f.jpg)
+![Screenshot_20210419-121842](https://user-images.githubusercontent.com/44782699/115214159-e6de3800-a10a-11eb-8706-7bea004dc4be.jpg)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
